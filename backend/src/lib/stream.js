@@ -12,7 +12,7 @@ export const chatClient = StreamChat.getInstance(apikey, apiSecret);
 
 export const upsertStreamUser = async (userData) => {
   try {
-    await chatClient.upsertUser(userData);
+    await chatClient.upsertUsers([userData]);
     console.log("Stream user upserted successfully:", userData);
   } catch (error) {
     console.error("Error upserting Stream user:", error);
@@ -21,7 +21,7 @@ export const upsertStreamUser = async (userData) => {
 
 export const deleteStreamUser = async (userId) => {
   try {
-    await chatClient.deleteUser(userId);
+    await chatClient.deleteUsers([userId]);
     console.log("Stream user deleted successfully:", userId);
   } catch (error) {
     console.error("Error deleting the Stream user:", error);
