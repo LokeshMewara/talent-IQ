@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import { PROBLEMS } from "../data/problem";
 import { Link } from "react-router";
 import { getDifficultyBadgeClass } from "../lib/utils";
+import { useActiveSessions } from "../hooks/useSession";
 
 function ProblemsPage() {
   const problems = Object.values(PROBLEMS);
@@ -16,6 +17,9 @@ function ProblemsPage() {
   const hardProblemsCount = problems.filter(
     (p) => p.difficulty === "Hard",
   ).length;
+
+
+   
 
   return (
     <div className="min-h-screen bg-base-200">
